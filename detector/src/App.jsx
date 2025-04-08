@@ -25,6 +25,7 @@ export default function App() {
   useEffect(() => {
     const getObjects = async () => {
       isPhotoLoading(true);
+      console.log("finding objects...");
       const detectorFunc = detector[0];
       const detectedObjects = await detectorFunc(url, {
         threshold: 0.5,
@@ -41,7 +42,7 @@ export default function App() {
 
   useEffect(() => {
     const runPipeline = async () => {
-      const detector = await pipeline("object-detection", "Xenova/yolos-tiny");
+      const detector = await pipeline("object-detection", "Xenova/detr-resnet-50");
       setDetector([detector]);
       isPipeLoading(false);
     };
