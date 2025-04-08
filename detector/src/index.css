@@ -68,6 +68,5 @@ button:focus-visible {
 }
 
 .loaded-image {
-  width: 400px;
-  height: 400px;
+transform: scale(.5);
 }
